@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DeeTech ISP — Complete Payment</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <img src="assets/logo.jpg" alt="DeeTech logo" />
+    <div>
+      <div class="brand-name">DeeTech</div>
+      <div class="brand-tag">Internet Service Provider</div>
+    </div>
+  </div>
+
+  <h1 class="page-title">Complete payment</h1>
+  <p class="page-sub">Scan the QR code with any UPI app to pay.</p>
+
+  <div class="pay-card">
+    <div class="pay-plan" id="payPlan"></div>
+    <div class="pay-amount" id="payAmount"></div>
+
+    <div class="qr-box">
+      <img src="assets/qr.jpg" alt="Scan to pay QR code" />
+    </div>
+    <div class="upi-id">UPI ID: dmstarshukla2-9@okhdfcbank</div>
+
+    <ol class="pay-steps">
+      <li>Open any UPI app (GPay, PhonePe, Paytm).</li>
+      <li>Scan the QR code above.</li>
+      <li>Confirm the amount and complete payment.</li>
+      <li>Tap "I've Paid" below.</li>
+    </ol>
+
+    <button class="primary-btn" id="paidBtn">I've Paid — Check Status</button>
+  </div>
+
+  <a href="customer.html" class="ghost-link">&larr; Back to details</a>
+</div>
+
+<script src="js/payment.js"></script>
+</body>
+</html>

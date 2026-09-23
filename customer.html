@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DeeTech ISP — Your Details</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <img src="assets/logo.jpg" alt="DeeTech logo" />
+    <div>
+      <div class="brand-name">DeeTech</div>
+      <div class="brand-tag">Internet Service Provider</div>
+    </div>
+  </div>
+
+  <h1 class="page-title">Complete your details</h1>
+  <p class="page-sub">We'll use this to identify your connection for activation.</p>
+
+  <div class="summary-strip" id="summaryStrip"></div>
+
+  <form id="customerForm" novalidate>
+    <div class="field" id="nameField">
+      <label for="name">Full name</label>
+      <input id="name" type="text" placeholder="e.g. Rahul Sharma" autocomplete="name" />
+      <div class="error">Please enter your name.</div>
+    </div>
+
+    <div class="field" id="mobileField">
+      <label for="mobile">Mobile number</label>
+      <input id="mobile" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number" autocomplete="tel" />
+      <div class="error">Enter a valid 10-digit mobile number.</div>
+    </div>
+
+    <div class="field" id="custIdField">
+      <label for="custId">Customer ID <span style="font-weight:400;color:var(--muted)">(if known)</span></label>
+      <input id="custId" type="text" placeholder="e.g. WIFI00123" autocomplete="off" />
+      <div class="hint">Found on your last bill or installation slip. Leave blank if you don't have one.</div>
+    </div>
+
+    <button type="submit" class="primary-btn">Continue to Payment</button>
+    <a href="index.html" class="ghost-link">&larr; Change plan</a>
+  </form>
+</div>
+
+<script src="js/customer.js"></script>
+</body>
+</html>

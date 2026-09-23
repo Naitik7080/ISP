@@ -1,0 +1,235 @@
+:root {
+  --navy: #0b2545;
+  --navy-deep: #071a33;
+  --red: #d8232a;
+  --red-dark: #b31820;
+  --paper: #f5f7fa;
+  --card: #ffffff;
+  --ink: #101826;
+  --muted: #5b6779;
+  --line: #e2e6ec;
+  --success: #1a9c56;
+  --pending: #b7791f;
+  --radius: 14px;
+  --shadow: 0 12px 28px rgba(11, 37, 69, 0.08);
+  font-size: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Manrope", -apple-system, "Segoe UI", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 460px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px 40px;
+}
+
+/* Header */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.brand img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; }
+.brand-name { font-size: 1.05rem; font-weight: 800; color: var(--navy); line-height: 1.1; }
+.brand-tag { font-size: 0.78rem; color: var(--muted); }
+
+h1.page-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 4px;
+}
+p.page-sub {
+  color: var(--muted);
+  margin: 0 0 24px;
+  font-size: 0.94rem;
+}
+
+/* Plan cards */
+.plans { display: flex; flex-direction: column; gap: 14px; }
+.plan-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+.plan-card.popular { border: 1.5px solid var(--red); position: relative; }
+.plan-card.popular::before {
+  content: "Most chosen";
+  position: absolute;
+  top: -11px;
+  left: 18px;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.plan-left .plan-name { font-weight: 700; font-size: 1.02rem; color: var(--ink); }
+.plan-left .plan-days { color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
+.plan-right { text-align: right; }
+.plan-right .plan-price { font-size: 1.4rem; font-weight: 800; color: var(--navy); }
+.plan-right .plan-price sup { font-size: 0.85rem; font-weight: 700; }
+.plan-right button {
+  margin-top: 8px;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.plan-right button:active { background: var(--red-dark); }
+
+.support-line {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.support-line a { color: var(--navy); font-weight: 700; text-decoration: none; }
+
+/* Forms */
+.field { margin-bottom: 16px; }
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.field input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: var(--card);
+}
+.field input:focus { outline: 2px solid var(--navy); outline-offset: 1px; }
+.field .hint { font-size: 0.76rem; color: var(--muted); margin-top: 4px; }
+.field .error { font-size: 0.76rem; color: var(--red); margin-top: 4px; display: none; }
+.field.invalid input { border-color: var(--red); }
+.field.invalid .error { display: block; }
+
+.summary-strip {
+  background: var(--navy);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.summary-strip .s-plan { font-weight: 700; }
+.summary-strip .s-amount { font-weight: 800; font-size: 1.1rem; }
+
+.primary-btn {
+  width: 100%;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 6px;
+}
+.primary-btn:active { background: var(--red-dark); }
+.primary-btn[disabled] { opacity: 0.55; cursor: not-allowed; }
+
+.ghost-link {
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+/* Payment page */
+.pay-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  text-align: center;
+  border: 1px solid var(--line);
+}
+.pay-card .pay-plan { font-weight: 700; color: var(--muted); font-size: 0.9rem; }
+.pay-card .pay-amount { font-size: 2rem; font-weight: 800; color: var(--navy); margin: 4px 0 18px; }
+.qr-box img {
+  width: 100%;
+  max-width: 240px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+.upi-id { margin-top: 12px; font-size: 0.82rem; color: var(--muted); word-break: break-all; }
+.pay-steps {
+  text-align: left;
+  margin: 20px 0 4px;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+/* Status / result screens */
+.result-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 22px;
+  text-align: center;
+  border: 1px solid var(--line);
+}
+.status-icon {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 1.6rem;
+  color: #fff;
+}
+.status-icon.success { background: var(--success); }
+.status-icon.pending { background: var(--pending); }
+.status-icon.failed { background: var(--red); }
+.result-title { font-size: 1.2rem; font-weight: 800; margin: 0 0 6px; color: var(--ink); }
+.result-sub { color: var(--muted); font-size: 0.92rem; margin: 0 0 20px; }
+.order-box {
+  background: var(--paper);
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: left;
+  font-size: 0.88rem;
+}
+.order-box div { display: flex; justify-content: space-between; padding: 3px 0; }
+.order-box .k { color: var(--muted); }
+.order-box .v { font-weight: 700; }
+
+@media (max-width: 360px) {
+  .wrap { padding: 18px 14px 32px; }
+}
